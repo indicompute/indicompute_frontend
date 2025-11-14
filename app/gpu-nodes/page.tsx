@@ -15,7 +15,7 @@ export default function GpuNodesPage() {
   // 🧠 Fetch GPU Nodes
   async function fetchNodes() {
     try {
-      const res = await fetch("http://127.0.0.1:8000/gpu-nodes", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/gpu-nodes", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -39,7 +39,7 @@ export default function GpuNodesPage() {
   async function handleAddNode(e: any) {
     e.preventDefault();
     try {
-      const res = await fetch("http://127.0.0.1:8000/gpu-nodes/register", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/gpu-nodes/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

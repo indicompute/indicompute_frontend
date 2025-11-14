@@ -24,7 +24,7 @@ export default function JobsPage() {
   const fetchJobs = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://127.0.0.1:8000/user-jobs", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/user-jobs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch jobs");
@@ -48,7 +48,7 @@ export default function JobsPage() {
     };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/submit-job", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/submit-job", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export default function JobsPage() {
     if (!token) return alert("Login required!");
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/simulate-job-complete/${jobId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/simulate-job-complete/${jobId}`,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },
