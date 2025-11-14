@@ -18,7 +18,7 @@ export default function SubmitJobPage() {
         return;
       }
 
-      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/submit-job", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/submit-job`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

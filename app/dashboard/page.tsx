@@ -21,13 +21,13 @@ export default function DashboardPage() {
     async function fetchData() {
       try {
         const [userRes, walletRes, gpuRes] = await Promise.all([
-          fetch("${process.env.NEXT_PUBLIC_API_URL}/me", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/me`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("${process.env.NEXT_PUBLIC_API_URL}/wallet/balance", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/wallet/balance`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("${process.env.NEXT_PUBLIC_API_URL}/gpu-nodes", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/gpu-nodes`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

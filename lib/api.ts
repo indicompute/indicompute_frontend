@@ -1,5 +1,5 @@
 // lib/api.ts
-export const API_BASE = "${process.env.NEXT_PUBLIC_API_URL}"; // backend URL
+export const API_BASE = `${process.env.NEXT_PUBLIC_API_URL}`; // backend URL
 
 // centralized API call function
 export async function apiFetch(endpoint: string, method = "GET", data?: any) {

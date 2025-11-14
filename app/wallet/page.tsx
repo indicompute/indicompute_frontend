@@ -31,10 +31,10 @@ export default function WalletPage() {
     setLoading(true);
     try {
       const [balRes, txRes] = await Promise.all([
-        fetch("http://${process.env.NEXT_PUBLIC_API_URL}/wallet/balance", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/wallet/balance`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("${process.env.NEXT_PUBLIC_API_URL}/wallet/transactions", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/wallet/transactions`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -69,7 +69,7 @@ if (!amt || amt <= 0 || isNaN(amt)) {
 }
 
 try {
-  const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/wallet/topup", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wallet/topup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

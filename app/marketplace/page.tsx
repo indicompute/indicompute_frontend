@@ -29,7 +29,7 @@ export default function MarketplacePage() {
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState<number | null>(null);
   const [msg, setMsg] = useState<string>("");
-  const apiBase = "${process.env.NEXT_PUBLIC_API_URL}";
+  const apiBase = `${process.env.NEXT_PUBLIC_API_URL}`;
 
   // ✅ Fetch current user
   async function fetchUser() {
