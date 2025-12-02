@@ -142,14 +142,14 @@ export default function Home() {
             <h4 className="text-2xl font-semibold">Starter</h4>
             <p className="text-4xl font-bold mt-4">₹29/hr</p>
             <p className="mt-4 text-gray-400">Run basic compute jobs.</p>
-            <a href="/signup" className="mt-6 block text-center bg-cyan-500 hover:bg-cyan-600 py-3 rounded-lg">Choose</a>
+            <a href="/signup" className="mt-6 block text-center bg-green-600 hover:bg-green-700 py-3 rounded-lg">Choose</a>
           </div>
 
           <div className="p-8 bg-white/5 rounded-xl border border-white/10">
             <h4 className="text-2xl font-semibold">Pro</h4>
             <p className="text-4xl font-bold mt-4">₹79/hr</p>
             <p className="mt-4 text-gray-400">Heavy training & ML workloads.</p>
-            <a href="/signup" className="mt-6 block text-center bg-white/10 hover:bg-white/20 py-3 rounded-lg">Choose</a>
+            <a href="/signup" className="mt-6 block text-center bg-orange-600 hover:bg-orange-700 py-3 rounded-lg">Choose</a>
           </div>
 
           <div className="p-8 bg-white/5 rounded-xl border border-white/10">
