@@ -1,40 +1,77 @@
+"use client";
+import { useState } from "react";
+
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#050A0F] text-white">
-      
+
       {/* NAVBAR */}
       <nav className="w-full border-b border-white/10 backdrop-blur-lg fixed top-0 z-50">
-  <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
-    {/* LOGO */}
-    <h1 className="text-2xl font-bold text-cyan-400">IndiCompute ⚡</h1>
+          {/* LOGO */}
+          <h1 className="text-2xl font-bold text-cyan-400">IndiCompute ⚡</h1>
 
-    {/* MENU LINKS */}
-    <div className="flex space-x-8 text-gray-300">
-      <a href="#features" className="hover:text-white">Features</a>
-      <a href="#pricing" className="hover:text-white">Pricing</a>
-      <a href="#nodes" className="hover:text-white">GPU Nodes</a>
-    </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8 text-gray-300">
+            <a href="#features" className="hover:text-white">Features</a>
+            <a href="#pricing" className="hover:text-white">Pricing</a>
+            <a href="#nodes" className="hover:text-white">GPU Nodes</a>
+          </div>
 
-    {/* AUTH BUTTONS */}
-    <div className="flex space-x-2">
-      <a
-        href="/auth/login"
-        className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white"
-      >
-        Login
-      </a>
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex space-x-2">
+            <a
+              href="/auth/login"
+              className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white"
+            >
+              Login
+            </a>
 
-      <a
-        href="/auth/signup"
-        className="px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-300"
-      >
-        Sign Up
-      </a>
-    </div>
+            <a
+              href="/auth/signup"
+              className="px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-300"
+            >
+              Sign Up
+            </a>
+          </div>
 
-  </div>
-</nav>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white text-3xl"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? "✖" : "☰"}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {open && (
+          <div className="md:hidden bg-[#050A0F] border-t border-white/10 px-4 py-4 space-y-4">
+            <a href="#features" className="block text-gray-300 hover:text-white">Features</a>
+            <a href="#pricing" className="block text-gray-300 hover:text-white">Pricing</a>
+            <a href="#nodes" className="block text-gray-300 hover:text-white">GPU Nodes</a>
+
+            <div className="pt-4 flex flex-col space-y-2">
+              <a
+                href="/auth/login"
+                className="text-center px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white"
+              >
+                Login
+              </a>
+
+              <a
+                href="/auth/signup"
+                className="text-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-300"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
 
       {/* HERO */}
       <section className="pt-32 pb-20 text-center">
